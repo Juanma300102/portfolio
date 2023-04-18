@@ -1,22 +1,12 @@
 import { useState } from 'react';
-import reactLogo from './assets/react.svg';
-import viteLogo from '/vite.svg';
-import { Box } from '@mui/material';
+import { Box, Typography, useTheme } from '@mui/material';
 
 export default () => {
 	const [count, setCount] = useState(0);
-
+	const theme = useTheme();
 	return (
 		<Box>
-			<div>
-				<a href="https://vitejs.dev" target="_blank" rel="noreferrer">
-					<img src={viteLogo} className="logo" alt="Vite logo" />
-				</a>
-				<a href="https://reactjs.org" target="_blank" rel="noreferrer">
-					<img src={reactLogo} className="logo react" alt="React logo" />
-				</a>
-			</div>
-			<h1>My Portfolio</h1>
+			<Typography variant='h3' color={theme.schemes.light.secondary}>My Portfolio</Typography>
 			<div className="card">
 				<button onClick={() => setCount((count) => count + 1)}>
 					count is {count}
