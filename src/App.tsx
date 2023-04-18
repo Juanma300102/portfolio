@@ -1,12 +1,13 @@
 import { useState } from 'react';
 import reactLogo from './assets/react.svg';
 import viteLogo from '/vite.svg';
+import { Box } from '@mui/material';
 
 export default () => {
 	const [count, setCount] = useState(0);
 
 	return (
-		<div className="App">
+		<Box>
 			<div>
 				<a href="https://vitejs.dev" target="_blank" rel="noreferrer">
 					<img src={viteLogo} className="logo" alt="Vite logo" />
@@ -27,6 +28,6 @@ export default () => {
 			<p className="read-the-docs">
 				Click on the Vite and React logos to learn more
 			</p>
-		</div>
+		</Box>
 	);
 }
