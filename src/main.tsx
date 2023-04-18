@@ -5,7 +5,7 @@ import '@fontsource/roboto/400.css';
 import '@fontsource/roboto/500.css';
 import '@fontsource/roboto/700.css';
 import { createBrowserRouter, RouterProvider } from 'react-router-dom';
-import { routes } from './routes/routes';
+import { routes } from './routes';
 
 const router = createBrowserRouter(routes)
 
