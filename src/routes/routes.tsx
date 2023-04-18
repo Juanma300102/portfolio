@@ -1,9 +1,9 @@
 import { RouteObject } from "react-router-dom"
-import App from "../App"
+import Home from "../pages/home"
 
 export const routes: RouteObject[] = [
     {
         path: "/",
-        element: <App/>
+        element: <Home/>
     }
 ]
