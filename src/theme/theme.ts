@@ -1,8 +1,11 @@
-import { createTheme } from "@mui/material";
+import { Components, SxProps, Theme, createTheme } from "@mui/material";
 import a from './theme.json'
 
 declare module '@mui/material/styles' {
-    interface Theme {
+    interface ITheme {
+      components?: Components<Theme>,
+      unstable_sx: (props: SxProps<Theme>) => CSSObject,
+      unstable_sxConfig: SxConfig,
       schemes: {
         light: any,
         dark: any
