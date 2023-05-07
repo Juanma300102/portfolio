@@ -73,7 +73,9 @@ export const backgroudParticlesConfig: ISourceOptions = {
   },
   detectRetina: true,
   style: {
-    width: "100vw",
-    height: "100vh",
+    position: "absolute",
+    width: "none",
+    height: "none",
+    overflow: "hidden",
   },
 };

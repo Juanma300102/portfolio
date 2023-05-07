@@ -19,37 +19,29 @@ export default () => {
   return (
     <Box
       sx={{
-        position: "absolute",
+        position: "fixed",
         top: "0px",
         left: "0px",
         width: "100vw",
         height: "100vh",
-        boxSizing: "border-box",
-        padding: 3,
         bgcolor: theme.schemes.light.onPrimaryContainer,
+        padding: 3,
+        boxSizing: "border-box",
       }}
     >
       <Outlet />
       <Nav />
-      <div
+      <Particles
+        id="tsparticles"
         style={{
+          position: "absolute",
           width: "100%",
           height: "100%",
-          position: "absolute",
-          top: "0px",
-          left: "0px",
         }}
-      >
-        <Particles
-          id="tsparticles"
-          width="100vw"
-          height="100vh"
-          init={particlesInit}
-          loaded={particlesLoaded}
-          canvasClassName="particles-canvas"
-          options={backgroudParticlesConfig}
-        />
-      </div>
+        init={particlesInit}
+        loaded={particlesLoaded}
+        options={backgroudParticlesConfig}
+      />
     </Box>
   );
 };
