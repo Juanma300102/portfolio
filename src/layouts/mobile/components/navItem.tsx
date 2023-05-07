@@ -1,9 +1,5 @@
-import { Box } from "@mui/material"
+import { Box } from "@mui/material";
 
 export const NavItem = () => {
-    return (
-    <Box>
-        Hola
-    </Box>
-    )
-}
+  return <Box sx={{ zIndex: 1 }}>Hola</Box>;
+};

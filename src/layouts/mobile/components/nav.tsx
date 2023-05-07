@@ -1,20 +1,11 @@
-import { Box } from "@mui/material";
+import { Box, SxProps } from "@mui/material";
 import { NavItem } from "./navItem";
 /* import { useTheme } from "@emotion/react";
 import { Theme } from "@mui/material"; */
 
-export const Nav = () => {
-  // const theme: any = useTheme();
+export const Nav = (props: { sx: SxProps }) => {
   return (
-    <Box
-      sx={{
-        position: "relative",
-        boxSizing: "border-box",
-        width: "100vw",
-        display: "flex",
-        zIndex: 2,
-      }}
-    >
+    <Box sx={props.sx}>
       <NavItem />
       <NavItem />
       <NavItem />

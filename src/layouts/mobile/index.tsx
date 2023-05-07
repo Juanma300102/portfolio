@@ -27,10 +27,28 @@ export default () => {
         bgcolor: theme.schemes.light.onPrimaryContainer,
         padding: 3,
         boxSizing: "border-box",
+        zIndex: 1,
+        display: "flex",
+        flexDirection: "column",
       }}
     >
-      <Outlet />
-      <Nav />
+      <Box
+        sx={{
+          width: "100%",
+          height: "100%",
+        }}
+      >
+        <Outlet />
+      </Box>
+      <Nav
+        sx={{
+          boxSizing: "border-box",
+          width: "100%",
+          display: "flex",
+          position: "relative",
+          zIndex: 1,
+        }}
+      />
       <Particles
         id="tsparticles"
         style={{
