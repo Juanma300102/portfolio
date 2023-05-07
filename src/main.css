@@ -1,0 +1,12 @@
+/* #tsparticles {
+  height: 100vh;
+  position: absolute;
+  width: 100vw;
+  top: 0px;
+  left: 0px;
+} */
+
+.particles-canvas {
+  width: 680px;
+  height: 800px;
+}
