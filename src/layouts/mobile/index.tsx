@@ -1,21 +1,44 @@
 import { Box } from "@mui/material";
-import { Outlet } from "react-router-dom";
-import { useCallback } from "react";
+import { Outlet, useLocation } from "react-router-dom";
+import { useCallback, useEffect } from "react";
 import type { Engine } from "tsparticles-engine";
 import { loadFull } from "tsparticles";
 import Particles from "react-particles";
 import { backgroudParticlesConfig } from "@/shared";
 import { useTheme } from "@emotion/react";
 import { Nav } from "@/layouts/mobile/components";
+import { useDispatch } from "react-redux";
+import { PAGES, selectPage } from "./state";
 
 export default () => {
+  const dispatch = useDispatch();
+
+  const location = useLocation();
+  const theme: any = useTheme();
+
   const particlesInit = useCallback(async (engine: Engine) => {
     await loadFull(engine);
-    console.log(engine);
   }, []);
   const particlesLoaded = useCallback(async () => {}, []);
 
-  const theme: any = useTheme();
+  useEffect(() => {
+    switch (location.pathname) {
+      case "/": {
+        console.log("dispatch select");
+        dispatch(selectPage(PAGES.home));
+      }
+      case "/me": {
+        dispatch(selectPage(PAGES.profile));
+      }
+      case "/projects": {
+        dispatch(selectPage(PAGES.projects));
+      }
+      case "/contact": {
+        dispatch(selectPage(PAGES.contact));
+      }
+    }
+  }, [location]);
+
   return (
     <Box
       sx={{
