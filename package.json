@@ -30,7 +30,8 @@
     "react-particles": "^2.9.3",
     "react-router-dom": "^6.10.0",
     "sort-by": "^1.2.0",
-    "tsparticles": "^2.9.3"
+    "tsparticles": "^2.9.3",
+    "vite-tsconfig-paths": "^4.2.0"
   },
   "devDependencies": {
     "@tsconfig/recommended": "^1.0.1",

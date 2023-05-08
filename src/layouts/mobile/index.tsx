@@ -4,9 +4,9 @@ import { useCallback } from "react";
 import type { Engine } from "tsparticles-engine";
 import { loadFull } from "tsparticles";
 import Particles from "react-particles";
-import { backgroudParticlesConfig } from "../../shared";
+import { backgroudParticlesConfig } from "@/shared";
 import { useTheme } from "@emotion/react";
-import { Nav } from "./components";
+import { Nav } from "@/layouts/mobile/components";
 
 export default () => {
   const particlesInit = useCallback(async (engine: Engine) => {
@@ -45,7 +45,9 @@ export default () => {
           boxSizing: "border-box",
           width: "100%",
           display: "flex",
+          justifyContent: "space-between",
           position: "relative",
+          padding: 2,
           zIndex: 1,
         }}
       />
