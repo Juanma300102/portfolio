@@ -19,7 +19,6 @@ export const NavItem = (props: INavItemProps) => {
     borderColor: theme.schemes.light.primary,
   });
   useEffect(() => {
-    console.log(props.selected);
     setBoxStyle({
       zIndex: 1,
       boxSizing: "border-box",
