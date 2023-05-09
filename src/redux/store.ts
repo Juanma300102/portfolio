@@ -1,9 +1,8 @@
 import { configureStore } from "@reduxjs/toolkit";
-import mobilePageSelectedReducer from "@/layouts/mobile/state/pageSelectedSlice";
 // ...
 
 export const store = configureStore({
-  reducer: { mobilePageSelected: mobilePageSelectedReducer },
+  reducer: {},
 });
 
 // Infer the `RootState` and `AppDispatch` types from the store itself

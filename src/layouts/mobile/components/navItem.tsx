@@ -1,29 +1,36 @@
-import { useTheme } from "@emotion/react";
-import { Box } from "@mui/material";
-import { useEffect, useState } from "react";
+import { CSSProperties } from "react";
+import { NavLink } from "react-router-dom";
 
 export interface INavItemProps {
+  to: string;
   icon: string;
-  selected: boolean;
-  onClick: any;
 }
 
+const activeStyle: CSSProperties = {
+  zIndex: 1,
+  boxSizing: "border-box",
+  borderStyle: "none none solid none",
+  borderWidth: "2px",
+  borderColor: "#006783",
+};
+
+const pendingStyle: CSSProperties = {
+  zIndex: 1,
+  boxSizing: "border-box",
+  borderStyle: "none",
+  borderWidth: "2px",
+  borderColor: "#006783",
+};
+
 export const NavItem = (props: INavItemProps) => {
-  const theme: any = useTheme();
-  // eslint-disable-next-line @typescript-eslint/no-unused-vars
-  const [boxStyle, setBoxStyle] = useState({});
-  useEffect(() => {
-    setBoxStyle({
-      zIndex: 1,
-      boxSizing: "border-box",
-      borderStyle: props.selected ? "none none solid none" : "none",
-      borderWidth: "4px",
-      borderColor: theme.schemes.light.primary,
-    });
-  }, [props.selected]);
   return (
-    <Box sx={boxStyle} onClick={props.onClick}>
+    <NavLink
+      to={props.to}
+      style={({ isActive }) => {
+        return isActive ? activeStyle : pendingStyle;
+      }}
+    >
       <img style={{ width: "40px", height: "40px" }} src={props.icon} />
-    </Box>
+    </NavLink>
   );
 };
