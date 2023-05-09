@@ -23,7 +23,7 @@ export default () => {
         top: "0px",
         left: "0px",
         width: "100vw",
-        height: "100vh",
+        height: "-webkit-fill-available",
         bgcolor: theme.schemes.light.onPrimaryContainer,
         padding: 3,
         boxSizing: "border-box",
