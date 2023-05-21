@@ -29,6 +29,7 @@ export default () => {
         display: "flex",
         flexDirection: "column",
         gap: 2,
+        height: "100%",
       }}
     >
       <Typography
@@ -42,7 +43,13 @@ export default () => {
       <Divider sx={{ width: "100%", bgcolor: theme.schemes.light.onPrimary }} />
       <TextField sx={inputStyle} label="Your name" variant="outlined" />
       <TextField sx={inputStyle} label="Subject" variant="outlined" />
-      <TextField sx={inputStyle} label="Body" variant="outlined" multiline />
+      <TextField
+        sx={inputStyle}
+        rows={6}
+        label="Body"
+        variant="outlined"
+        multiline
+      />
     </Box>
   );
 };
