@@ -1,12 +1,20 @@
 import { useTheme } from "@emotion/react";
-import { Box, Typography } from "@mui/material";
+import { Box, Typography, Button } from "@mui/material";
 
-export default () => {
+type ProjectCardProps = {
+  title: string;
+  description: string;
+  imgUrl: string;
+  siteUrl: string;
+};
+
+export default (props: ProjectCardProps) => {
   const theme: any = useTheme();
+  const bgConfig: string = `linear-gradient(rgba(0, 0, 0, 0), rgba(0, 31, 42, 1)), url('${props.imgUrl}')`;
   return (
     <Box
       sx={{
-        width: "234px",
+        width: "70vw",
         height: "100%",
         display: "flex",
         flexDirection: "column",
@@ -22,8 +30,7 @@ export default () => {
           paddingX: 2,
           display: "flex",
           alignItems: "end",
-          backgroundImage:
-            "linear-gradient(rgba(0, 0, 0, 0), rgba(0, 31, 42, 1)), url('https://drive.google.com/uc?id=1TW8aWotRgaeb1f-mOn41bRJ66yrCCisP')",
+          backgroundImage: bgConfig,
           backgroundSize: "cover",
           backgroundRepeat: "no-repeat",
         }}
@@ -34,7 +41,7 @@ export default () => {
           fontWeight={500}
           color={theme.schemes.light.onPrimary}
         >
-          WagHotels
+          {props.title}
         </Typography>
       </Box>
       <Box
@@ -44,6 +51,7 @@ export default () => {
           padding: 2,
           display: "flex",
           flexDirection: "column",
+          justifyContent: "space-between",
         }}
       >
         <Typography
@@ -51,11 +59,18 @@ export default () => {
           fontSize={"14px"}
           color={theme.schemes.light.onPrimary}
         >
-          Wag Hotels was founded in 2005 by pet lovers who couldn't find a
-          suitable place to leave their pets during business trips. What started
-          as a personal quest has grown into the ultimate boarding and daycare
-          resort for dogs and cats.
+          {props.description}
         </Typography>
+        <Button
+          sx={{
+            borderRadius: 3,
+            bgcolor: theme.schemes.light.primary,
+            color: theme.schemes.light.onPrimary,
+          }}
+          onClick={() => window.open(props.siteUrl, "_blank")}
+        >
+          Visit
+        </Button>
       </Box>
     </Box>
   );

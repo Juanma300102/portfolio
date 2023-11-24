@@ -2,6 +2,7 @@ import { useTheme } from "@emotion/react";
 import { Box, Typography, Divider, TextField, SxProps } from "@mui/material";
 
 export default () => {
+  /* TODO: change to social media links */
   const theme: any = useTheme();
 
   const inputStyle: SxProps = {
