@@ -1,5 +1,13 @@
 import { useTheme } from "@emotion/react";
-import { Box, Typography, Divider, TextField, SxProps } from "@mui/material";
+import {
+  Box,
+  Typography,
+  Divider,
+  TextField,
+  SxProps,
+  Button,
+} from "@mui/material";
+import { useState } from "react";
 
 export default () => {
   /* TODO: change to social media links */
@@ -20,6 +28,10 @@ export default () => {
       },
     },
   };
+
+  const [name, setName] = useState("");
+  const [subject, setSubject] = useState("");
+  const [body, setBody] = useState("");
 
   return (
     <Box
@@ -42,15 +54,44 @@ export default () => {
         Contact me
       </Typography>
       <Divider sx={{ width: "100%", bgcolor: theme.schemes.light.onPrimary }} />
-      <TextField sx={inputStyle} label="Your name" variant="outlined" />
-      <TextField sx={inputStyle} label="Subject" variant="outlined" />
+      <TextField
+        sx={inputStyle}
+        label="Your name"
+        variant="outlined"
+        value={name}
+        onChange={(event) => setName(event.target.value)}
+      />
+      <TextField
+        sx={inputStyle}
+        label="Subject"
+        variant="outlined"
+        value={subject}
+        onChange={(event) => setSubject(event.target.value)}
+      />
       <TextField
         sx={inputStyle}
         rows={6}
         label="Body"
         variant="outlined"
         multiline
+        value={body}
+        onChange={(event) => setBody(event.target.value)}
       />
+      <Button
+        sx={{
+          borderRadius: 3,
+          bgcolor: theme.schemes.light.primary,
+          color: theme.schemes.light.onPrimary,
+        }}
+        onClick={() => {
+          setBody("");
+          setName("");
+          setSubject("");
+          alert("Email sent.");
+        }}
+      >
+        send
+      </Button>
     </Box>
   );
 };
